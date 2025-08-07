@@ -12,33 +12,37 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-size: 1.4rem;
-  font-family: "Plus Jakarta Sans", sans-serif;
   color: #0a2530;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.4rem;
 }
 
 /***
   Header styles
 ***/
 header {
-  height: 62px;
-  background-color: var(--main-color);
-  color: #fff;
   display: grid;
-  grid-template-columns: auto 30px 30px;
+  height: 62px;
   align-items: center;
   padding: 0 23px 0 30px;
+  background-color: var(--main-color);
+  color: #fff;
+  grid-template-columns: auto 30px 30px;
 }
 
 header a {
   color: #fff;
+  font-size: 1.8rem;
   text-decoration: none;
   transition: 0.3s cubic-bezier(1, 0, 0, 1);
-  font-size: 1.8rem;
 }
 
 .album-add img {
   margin-left: 10px;
+}
+
+.album > img {
+  width: 100%;
 }
 
 header a:first-child img {
@@ -59,15 +63,15 @@ main {
 }
 
 main .button {
-  background-color: var(--main-color);
-  color: #fff;
-  cursor: pointer;
   padding: 12px 14px;
   border-color: black;
   border-radius: 4px;
+  background-color: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
   text-decoration: none;
   transition: 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-  text-align: center;
 }
 
 .button:active,
@@ -88,21 +92,21 @@ main .button:active {
 .search {
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 42px);
   grid-template-areas:
     "a a"
     "b c"
     "d d"
     "e e";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 42px);
 }
 
 *[class*="search--"] {
+  padding: 11px 14px;
   border: 1px solid #edeef0;
   border-radius: 4px;
   font-size: 1.6rem;
   line-height: 1;
-  padding: 11px 14px;
 }
 
 *[class*="search--"]:focus {
@@ -134,12 +138,12 @@ main .button:active {
 }
 
 .error {
+  display: none;
+  padding: 8px;
   border: solid 1px red;
   border-radius: 4px;
-  padding: 8px;
-  background: rgb(255 0 0 / 30%);
   margin-bottom: 12px;
-  display: none;
+  background: rgb(255 0 0 / 30%);
   transition: 1s;
 }
 
@@ -149,8 +153,8 @@ main .button:active {
 .albums-wrapper {
   display: grid;
   margin-top: 18px;
-  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .album {
@@ -162,21 +166,17 @@ main .button:active {
   margin-bottom: 4px;
 }
 
-.album > img {
-  width: 100%;
-}
-
 .album--favorite {
   position: absolute;
-  background-color: #fff;
-  border-radius: 4px;
   top: 10px;
   left: 10px;
   width: 24px;
   height: 19px;
-  text-align: center;
   padding-top: 5px;
+  border-radius: 4px;
+  background-color: #fff;
   cursor: pointer;
+  text-align: center;
   transition: 0.3s;
 }
 
@@ -192,13 +192,13 @@ main .button:active {
 }
 
 .album--name {
-  font-weight: 700;
   margin-top: 3px;
+  font-weight: 700;
 }
 
 .album--band {
-  font-weight: 500;
   margin-bottom: 6px;
+  font-weight: 500;
 }
 
 .album--year span:first-child,
@@ -218,22 +218,22 @@ main .button:active {
   Pagination styles
 ***/
 .pagination-wrapper {
-  margin: 20px auto;
   width: fit-content;
+  margin: 20px auto;
 }
 
 .pagination-wrapper .active {
-  padding-left: 20px;
   padding-right: 20px;
+  padding-left: 20px;
   pointer-events: none;
 }
 
 .pagination-wrapper a:not(.active) {
-  color: #738286;
   display: inline-block;
   padding: 23px;
-  text-decoration: none;
+  color: #738286;
   font-weight: 500;
+  text-decoration: none;
 }
 
 .pagination-wrapper a:not(.active):hover {
