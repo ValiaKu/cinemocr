@@ -2,12 +2,254 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <link rel="stylesheet" href="/src/main.css" />
+
+    <link
+      href="/src/responsive.css"
+      rel="stylesheet"
+      type="text/css"
+      media="(min-width: 992px)"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Valentyna's Vite Starter</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <header>
+      <a href="" id="button_back"
+        ><img src="/src/assets/icons/arrow-left.svg" alt="" />Back</a
+      >
+      <a href=""><img src="/src/assets/icons/heart.svg" alt="" /></a>
+      <a href=""><img src="/src/assets/icons/folder.svg" alt="" /></a>
+    </header>
+    <main>
+      <section class="form-wrapper">
+        <div class="error" id="error_box">
+          Please enter Artist name longer than 3 letter
+        </div>
+        <form class="search" id="search_form">
+          <input
+            class="search--name"
+            id="search_name"
+            type="text"
+            placeholder="Artist"
+          />
+          <select class="search--genre">
+            Genre
+            <option>Punk, Dub, Funk</option>
+            <option>Pop, Disco</option>
+            <option>Hip-Hop</option>
+          </select>
+          <select class="search--decade">
+            Decade
+            <option>2020-30 рр.</option>
+            <option>2010-20 рр.,</option>
+            <option>2000-10 рр.,</option>
+            <option>1990-00 рр.,</option>
+            <option>1980-90 рр.,</option>
+            <option>1970-80 рр.,</option>
+            <option>1960-70 рр.,</option>
+            <option>1950-60 рр.,</option>
+          </select>
+          <select class="search--country">
+            Country
+            <option>Ukraine</option>
+            <option>USA</option>
+            <option>UK</option>
+            <option>France</option>
+            <option>Spain</option>
+            <option>Australia</option>
+            <option>Germany</option>
+            <option>Portugal</option>
+          </select>
+          <button class="button search--submit" type="submit">Search</button>
+        </form>
+      </section>
+      <section class="albums-wrapper">
+        <!-- one item -->
+        <div class="album">
+          <img
+            src="/content/albums/album_1.jpg"
+            srcset="/content/albums/album_1_2x.jpg 2x"
+            alt="AC/DC - Let There Be Rock"
+          />
+          <div class="album--favorite" id="album_1">
+            <img src="/src/assets/icons/heart_black.svg" alt="" />
+          </div>
+          <div class="album--name">Let There Be Rock</div>
+          <div class="album--band">AC/DC</div>
+          <div class="album--year">
+            <span>Year :</span>
+            <span>1990</span>
+          </div>
+          <div class="album--style">
+            <span>Style :</span>
+            <span>Punk, Dub, Funk</span>
+          </div>
+          <div class="album--country">
+            <span>Country :</span>
+            <span>USA</span>
+          </div>
+          <a href="" class="button album-add"
+            >Add <img src="/src/assets/icons/plus.svg" alt=""
+          /></a>
+        </div>
+        <!-- one item -->
+        <div class="album">
+          <img
+            src="/content/albums/album_2.jpg"
+            srcset="/content/albums/album_2_2x.jpg 2x"
+            alt="AC/DC - Let There Be Rock"
+          />
+          <div class="album--favorite" id="album_2">
+            <img src="/src/assets/icons/heart_black.svg" alt="" />
+          </div>
+          <div class="album--name">Let There Be Rock</div>
+          <div class="album--band">AC/DC</div>
+          <div class="album--year">
+            <span>Year :</span>
+            <span>1990</span>
+          </div>
+          <div class="album--style">
+            <span>Style :</span>
+            <span>Punk, Dub, Funk</span>
+          </div>
+          <div class="album--country">
+            <span>Country :</span>
+            <span>USA</span>
+          </div>
+          <a href="" class="button album-add"
+            >Add <img src="/src/assets/icons/plus.svg" alt=""
+          /></a>
+        </div>
+        <!-- one item -->
+        <div class="album">
+          <img
+            src="/content/albums/album_3.jpg"
+            srcset="/content/albums/album_3_2x.jpg 2x"
+            alt="AC/DC - Let There Be Rock"
+          />
+          <div class="album--favorite" id="album_3">
+            <img src="/src/assets/icons/heart_black.svg" alt="" />
+          </div>
+          <div class="album--name">Let There Be Rock</div>
+          <div class="album--band">AC/DC</div>
+          <div class="album--year">
+            <span>Year :</span>
+            <span>1990</span>
+          </div>
+          <div class="album--style">
+            <span>Style :</span>
+            <span>Punk, Dub, Funk</span>
+          </div>
+          <div class="album--country">
+            <span>Country :</span>
+            <span>USA</span>
+          </div>
+          <a href="" class="button album-add"
+            >Add <img src="/src/assets/icons/plus.svg" alt=""
+          /></a>
+        </div>
+        <!-- one item -->
+        <div class="album" id="album_4">
+          <img
+            src="/content/albums/album_4.jpg"
+            srcset="/content/albums/album_4_2x.jpg 2x"
+            alt="AC/DC - Let There Be Rock"
+          />
+          <div class="album--favorite">
+            <img src="/src/assets/icons/heart_black.svg" alt="" />
+          </div>
+          <div class="album--name">Let There Be Rock</div>
+          <div class="album--band">AC/DC</div>
+          <div class="album--year">
+            <span>Year :</span>
+            <span>1990</span>
+          </div>
+          <div class="album--style">
+            <span>Style :</span>
+            <span>Punk, Dub, Funk</span>
+          </div>
+          <div class="album--country">
+            <span>Country :</span>
+            <span>USA</span>
+          </div>
+          <a href="" class="button album-add"
+            >Add <img src="/src/assets/icons/plus.svg" alt=""
+          /></a>
+        </div>
+        <!-- one item -->
+        <div class="album">
+          <img
+            src="/content/albums/album_5.jpg"
+            srcset="/content/albums/album_5_2x.jpg 2x"
+            alt="AC/DC - Let There Be Rock"
+          />
+          <div class="album--favorite" id="album_5">
+            <img src="/src/assets/icons/heart_black.svg" alt="" />
+          </div>
+          <div class="album--name">Let There Be Rock</div>
+          <div class="album--band">AC/DC</div>
+          <div class="album--year">
+            <span>Year :</span>
+            <span>1990</span>
+          </div>
+          <div class="album--style">
+            <span>Style :</span>
+            <span>Punk, Dub, Funk</span>
+          </div>
+          <div class="album--country">
+            <span>Country :</span>
+            <span>USA</span>
+          </div>
+          <a href="" class="button album-add"
+            >Add <img src="/src/assets/icons/plus.svg" alt=""
+          /></a>
+        </div>
+        <!-- one item -->
+        <div class="album">
+          <img
+            src="/content/albums/album_6.jpg"
+            srcset="/content/albums/album_6_2x.jpg 2x"
+            alt="AC/DC - Let There Be Rock"
+          />
+          <div class="album--favorite" id="album_6">
+            <img src="/src/assets/icons/heart_black.svg" alt="" />
+          </div>
+          <div class="album--name">Let There Be Rock</div>
+          <div class="album--band">AC/DC</div>
+          <div class="album--year">
+            <span>Year :</span>
+            <span>1990</span>
+          </div>
+          <div class="album--style">
+            <span>Style :</span>
+            <span>Punk, Dub, Funk</span>
+          </div>
+          <div class="album--country">
+            <span>Country :</span>
+            <span>USA</span>
+          </div>
+          <a href="" class="button album-add"
+            >Add <img src="/src/assets/icons/plus.svg" alt=""
+          /></a>
+        </div>
+      </section>
+      <!-- pagination-->
+      <nav class="pagination-wrapper">
+        <a class="button active" href="index.html?page=1" class="active">1</a>
+        <a href="index.html?page=2">2</a>
+        <a href="index.html?page=3">3</a>
+        <span>...</span>
+        <a href="index.html?page=8">8</a>
+      </nav>
+    </main>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
