@@ -1,0 +1,17 @@
+.search {
+  grid-template: "a b c d e" 1fr / repeat(5, 1fr);
+}
+
+.albums-wrapper {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.album > img {
+  width: 100%;
+}
+
+@media all and (width >= 1200px) {
+  .albums-wrapper {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

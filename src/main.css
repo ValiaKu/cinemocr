@@ -1,0 +1,241 @@
+/***
+  General styles
+***/
+:root {
+  --main-color: #083644;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1.4rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #0a2530;
+}
+
+/***
+  Header styles
+***/
+header {
+  height: 62px;
+  background-color: var(--main-color);
+  color: #fff;
+  display: grid;
+  grid-template-columns: auto 30px 30px;
+  align-items: center;
+  padding: 0 23px 0 30px;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s cubic-bezier(1, 0, 0, 1);
+  font-size: 1.8rem;
+}
+
+.album-add img {
+  margin-left: 10px;
+}
+
+header a:first-child img {
+  margin-right: 15px;
+  vertical-align: -1px;
+}
+
+header a:last-child {
+  justify-self: flex-end;
+}
+
+header a:hover {
+  opacity: 0.5;
+}
+
+main {
+  padding: 16px 20px;
+}
+
+main .button {
+  background-color: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  padding: 12px 14px;
+  border-color: black;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  text-align: center;
+}
+
+.button:active,
+.button:focus {
+  transform: scale(1.2);
+}
+
+main .button:focus,
+main .button:hover,
+main .button:active {
+  background-color: black;
+  outline-color: black;
+}
+
+/***
+  Form styles
+***/
+.search {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 42px);
+  grid-template-areas:
+    "a a"
+    "b c"
+    "d d"
+    "e e";
+}
+
+*[class*="search--"] {
+  border: 1px solid #edeef0;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 11px 14px;
+}
+
+*[class*="search--"]:focus {
+  outline-color: var(--main-color);
+}
+
+.search--name {
+  grid-area: a;
+}
+
+.search--genre {
+  grid-area: b;
+}
+
+.search--decade {
+  grid-area: c;
+}
+
+.search--country {
+  grid-area: d;
+}
+
+.search--submit {
+  grid-area: e;
+}
+
+.search--name:invalid {
+  border: 2px dashed red;
+}
+
+.error {
+  border: solid 1px red;
+  border-radius: 4px;
+  padding: 8px;
+  background: rgb(255 0 0 / 30%);
+  margin-bottom: 12px;
+  display: none;
+  transition: 1s;
+}
+
+/***
+  Album styles
+***/
+.albums-wrapper {
+  display: grid;
+  margin-top: 18px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.album {
+  position: relative;
+  margin-bottom: 2px;
+}
+
+.album > * {
+  margin-bottom: 4px;
+}
+
+.album > image {
+  width: 100%;
+}
+
+.album--favorite {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 4px;
+  top: 10px;
+  left: 10px;
+  width: 24px;
+  height: 19px;
+  text-align: center;
+  padding-top: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.album--favorite:active,
+.album--favorite:hover,
+.album--favorite:focus,
+.album--favorite.added {
+  opacity: 0.5;
+}
+
+.album--favorite:active {
+  transform: scale(1.2);
+}
+
+.album--name {
+  font-weight: 700;
+  margin-top: 3px;
+}
+
+.album--band {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.album--year span:first-child,
+.album--style span:first-child,
+.album--country span:first-child {
+  color: #738286;
+}
+
+.album-add {
+  display: block;
+  margin-top: 12px;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+/***
+  Pagination styles
+***/
+.pagination-wrapper {
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.pagination-wrapper .active {
+  padding-left: 20px;
+  padding-right: 20px;
+  pointer-events: none;
+}
+
+.pagination-wrapper a:not(.active) {
+  color: #738286;
+  display: inline-block;
+  padding: 23px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.pagination-wrapper a:not(.active):hover {
+  color: #000;
+}
