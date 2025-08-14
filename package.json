@@ -11,7 +11,8 @@
     "fix:scripts": "eslint --fix --report-unused-disable-directives --max-warnings 0 \"**/*.{js,jsx}\"",
     "lint:styles": "stylelint \"**/*.css\"",
     "fix:styles": "stylelint --fix \"**/*.css\"",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sass:watch": "sass --watch src/main.scss:src/main.css"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -32,6 +33,7 @@
     "eslint-plugin-testing-library": "^5.11.0",
     "eslint-plugin-vitest": "^0.2.2",
     "prettier": "^2.8.8",
+    "sass": "^1.90.0",
     "stylelint": "^15.6.2",
     "stylelint-config-idiomatic-order": "^9.0.0",
     "stylelint-config-recommended": "^12.0.0",
