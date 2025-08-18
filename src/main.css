@@ -63,27 +63,49 @@ main {
 }
 
 main .button {
+  display: flex;
+  width: 100%;
+  align-items: center;
   padding: 12px 14px;
+  border-style: none;
   border-color: black;
   border-radius: 4px;
   background-color: var(--main-color);
   color: #fff;
   cursor: pointer;
+  font-size: 1.6rem;
+  gap: 10px;
   text-align: center;
   text-decoration: none;
   transition: 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
-.button:active,
-.button:focus {
-  transform: scale(1.2);
+main .button--active svg {
+  fill: black;
+}
+
+main .button svg {
+  fill: white;
+}
+main .button:focus svg,
+main .button:hover svg,
+main .button:active svg {
+  fill: black;
 }
 
 main .button:focus,
 main .button:hover,
-main .button:active {
-  background-color: black;
-  outline-color: black;
+main .button:active,
+main .button--active {
+  background-color: #edeef0;
+  color: #000;
+}
+
+.button-fav {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background-color: transparent;
 }
 
 /***
@@ -171,8 +193,8 @@ main .button:active {
   top: 10px;
   left: 10px;
   width: 24px;
-  height: 19px;
-  padding-top: 5px;
+  height: 24px;
+  padding: 2px;
   border-radius: 4px;
   background-color: #fff;
   cursor: pointer;
@@ -207,6 +229,11 @@ main .button:active {
   color: #738286;
 }
 
+.album--style span:first-child {
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
 .album-add {
   display: block;
   margin-top: 12px;
@@ -238,4 +265,30 @@ main .button:active {
 
 .pagination-wrapper a:not(.active):hover {
   color: #000;
+}
+
+.genres-wrapper {
+  margin-top: 20px;
+}
+
+.genres-wrapper ul:before {
+  padding: 3px;
+  margin: 20px 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: gray;
+  content: "Genres: ";
+  font-size: 12px;
+}
+.genres-wrapper ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.genres-wrapper li {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin: 5px;
+  font-size: 18px;
+  font-weight: bold;
 }
