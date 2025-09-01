@@ -135,8 +135,8 @@ const Application: React.FC = () => {
     {
       id: 1,
       image: {
-        normal: "/assets/albums/album_1_2x.jpg",
-        double: "/assets/albums/album_1_2x.jpg 2x",
+        normal: "./src/assets/albums/album_1_2x.jpg",
+        double: "./src/assets/albums/album_1_2x.jpg 2x",
       },
       title: "Let There Be Rock",
       artist: "AC/DC",
@@ -150,8 +150,8 @@ const Application: React.FC = () => {
     {
       id: 2,
       image: {
-        normal: "/assets/albums/album_2_2x.jpg",
-        double: "/assets/albums/album_2_2x.jpg 2x",
+        normal: "./src/assets/albums/album_2_2x.jpg",
+        double: "./src/assets/albums/album_2_2x.jpg 2x",
       },
       title: "Discovery",
       artist: "Daft Punk", // артистів може бути багато
@@ -163,8 +163,8 @@ const Application: React.FC = () => {
     {
       id: 3,
       image: {
-        normal: "/assets/albums/album_3_2x.jpg",
-        double: "/assets/albums/album_3_2x.jpg 2x",
+        normal: "./src/assets/albums/album_3_2x.jpg",
+        double: "./src/assets/albums/album_3_2x.jpg 2x",
       },
       title: "Kind Of Blue",
       artist: "Miles Davis",
@@ -176,8 +176,8 @@ const Application: React.FC = () => {
     {
       id: 4,
       image: {
-        normal: "/assets/albums/album_4_2x.jpg",
-        double: "/assets/albums/album_4_2x.jpg 2x",
+        normal: "./src/assets/albums/album_4_2x.jpg",
+        double: "./src/assets/albums/album_4_2x.jpg 2x",
       },
       title: "Elephant",
       artist: "The White Stripes",
@@ -189,8 +189,8 @@ const Application: React.FC = () => {
     {
       id: 5,
       image: {
-        normal: "/assets/albums/album_5_2x.jpg",
-        double: "/assets/albums/album_5_2x.jpg 2x",
+        normal: "./src/assets/albums/album_5_2x.jpg",
+        double: "./src/assets/albums/album_5_2x.jpg 2x",
       },
       title: "Stoned Templed",
       artist: "Pilot",
@@ -202,8 +202,8 @@ const Application: React.FC = () => {
     {
       id: 6,
       image: {
-        normal: "/assets/albums/album_6_2x.jpg",
-        double: "/assets/albums/album_6_2x.jpg 2x",
+        normal: "./src/assets/albums/album_6_2x.jpg",
+        double: "./src/assets/albums/album_6_2x.jpg 2x",
       },
       title: "Good Kid, M.A.A.d City",
       artist: "Kendrick Lamar",
@@ -345,14 +345,14 @@ const Application: React.FC = () => {
     <Fragment>
       <header className={clsx("foo", { baz: true, bat: null })}>
         <a href="" id="button_back">
-          <img src="/assets/icons/arrow-left.svg" alt="" />
+          <img src="./src/assets/icons/arrow-left.svg" alt="" />
           Back
         </a>
         <a href="">
-          <img src="/assets/icons/heart.svg" alt="" />
+          <img src="./src/assets/icons/heart.svg" alt="" />
         </a>
         <a href="">
-          <img src="/assets/icons/folder.svg" alt="" />
+          <img src="./src/assets/icons/folder.svg" alt="" />
         </a>
       </header>
       <main>
