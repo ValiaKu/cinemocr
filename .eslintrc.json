@@ -22,14 +22,19 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    },
+    "plugins": ["react-refresh", "eslint-comments"],
+    "rules": {
+      "no-console": ["warn", { "allow": ["warn", "error"] }],
+      "no-debugger": "error",
+      "react-refresh/only-export-components": "warn",
+      "eslint-comments/no-use": ["error", { "allow": ["eslint-disable"] }],
+      "jsx-a11y/click-events-have-key-events": "off"
     }
-  },
-  "plugins": ["react-refresh", "eslint-comments"],
-  "rules": {
-    "no-console": ["warn", { "allow": ["warn", "error"] }],
-    "no-debugger": "error",
-    "react-refresh/only-export-components": "warn",
-    "eslint-comments/no-use": ["error", { "allow": ["eslint-disable"] }],
-    "jsx-a11y/click-events-have-key-events": "off"
   }
 }

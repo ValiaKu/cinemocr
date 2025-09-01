@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import clsx from "clsx";
-import "./main.css";
-import "./responsive.css";
+import "./main.scss";
+import "./responsive.scss";
 
 type Genre = {
   id: number;
