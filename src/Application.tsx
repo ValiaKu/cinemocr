@@ -221,7 +221,7 @@ const Application: React.FC = () => {
   };
 
   const handleRemoveFromCollection = (e: React.MouseEvent, vinyl: Vinyl) => {
-    alert("Add to collection: " + vinyl.title);
+    alert("Remove from collection: " + vinyl.title);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -304,9 +304,11 @@ const Application: React.FC = () => {
         </div>
         <button
           onClick={(e) => {
-            vinyl.inCollection
-              ? handleRemoveFromCollection(e, vinyl)
-              : handleAddToCollection(e, vinyl);
+            if (vinyl.inCollection) {
+              handleRemoveFromCollection(e, vinyl);
+            } else {
+              handleAddToCollection(e, vinyl);
+            }
           }}
           className={clsx("button", {
             "button--active": vinyl.inCollection,
