@@ -3,7 +3,6 @@ import clsx from "clsx";
 import "./main.css";
 import "./responsive.css";
 
-
 type Genre = {
   id: number;
   title: string;
@@ -129,7 +128,7 @@ const Application: React.FC = () => {
     },
   };
 
-  const collectionList:number[] = [2, 6];
+  const collectionList: number[] = [2, 6];
   const favoritesList: number[] = [1, 4, 5];
 
   const vinylList: Vinyl[] = [
@@ -268,7 +267,7 @@ const Application: React.FC = () => {
             className="button-fav"
           >
             <svg
-              fill={vinyl.inFavorites ? "#FF4500" : "000"}
+              fill={vinyl.inFavorites ? "#FF4500" : "#000"}
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -293,7 +292,11 @@ const Application: React.FC = () => {
           >
             {vinyl.genre ? vinyl.genre.title : "Unknown genre"}
           </span>
-          <span>{vinyl.styles.map((item) => renderStyle(item))}</span>
+          <span>
+            {vinyl.styles.map((item, index) => (
+              <Fragment key={index}>{renderStyle(item)}</Fragment>
+            ))}
+          </span>
         </div>
         <div className="album--country">
           <span>Country:</span>
