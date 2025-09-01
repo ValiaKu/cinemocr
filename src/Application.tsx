@@ -1,10 +1,42 @@
-import { Fragment } from "react/jsx-runtime";
+import { Fragment } from "react";
 import clsx from "clsx";
 import "./main.css";
 import "./responsive.css";
 
-const Application = () => {
-  const genreList = [
+
+type Genre = {
+  id: number;
+  title: string;
+};
+
+type Style = {
+  name: string;
+  title: string;
+};
+
+type Vinyl = {
+  id: number;
+  image: {
+    normal: string;
+    double: string;
+  };
+  title: string;
+  artist: string;
+  year: string;
+  country: string;
+  inFavorites?: boolean;
+  inCollection?: boolean;
+  genreId: number;
+  styles: string[];
+};
+
+type GenreColor = {
+  color: string;
+  colorTheme: "dark" | "light";
+};
+
+const Application: React.FC = () => {
+  const genreList: Genre[] = [
     {
       id: 1,
       title: "Electronic",
@@ -27,7 +59,7 @@ const Application = () => {
     },
   ];
 
-  const stylesList = [
+  const stylesList: Style[] = [
     {
       name: "house",
       title: "House",
@@ -74,7 +106,7 @@ const Application = () => {
     },
   ];
 
-  const mapGenreColor = {
+  const mapGenreColor: Record<number, GenreColor> = {
     [1]: {
       color: "#B71C1C",
       colorTheme: "dark",
@@ -97,10 +129,10 @@ const Application = () => {
     },
   };
 
-  const collectionList = [2, 6];
-  const favoritesList = [1, 4, 5];
+  const collectionList:number[] = [2, 6];
+  const favoritesList: number[] = [1, 4, 5];
 
-  const vinylList = [
+  const vinylList: Vinyl[] = [
     {
       id: 1,
       image: {
@@ -185,35 +217,35 @@ const Application = () => {
 
   const searchTitle = "";
 
-  const handleAddToCollection = (e, vinyl) => {
+  const handleAddToCollection = (e: React.MouseEvent, vinyl: Vinyl) => {
     alert("Add to collection: " + vinyl.title);
   };
 
-  const handleRemoveFromCollection = (e, vinyl) => {
+  const handleRemoveFromCollection = (e: React.MouseEvent, vinyl: Vinyl) => {
     alert("Add to collection: " + vinyl.title);
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     console.log(value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert("Form is sent");
   };
 
-  const handleFavorite = (e, vinyl) => {
+  const handleFavorite = (e: React.MouseEvent, vinyl: Vinyl) => {
     console.log(vinyl.title);
   };
 
-  const renderStyle = (styleName) => {
+  const renderStyle = (styleName: string) => {
     const styleItem = stylesList.find((item) => item.name === styleName);
 
-    return <span>{styleItem.title}</span>;
+    return <span>{styleItem ? styleItem.title : styleName}</span>;
   };
 
-  const renderVinyl = (item) => {
+  const renderVinyl = (item: Vinyl) => {
     const vinyl = {
       ...item,
       genre: genreList.find((genre) => genre.id === item.genreId),
@@ -236,7 +268,7 @@ const Application = () => {
             className="button-fav"
           >
             <svg
-              fill={vinyl.inFavorites ? "#FF4500" : null}
+              fill={vinyl.inFavorites ? "#FF4500" : "000"}
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -259,7 +291,7 @@ const Application = () => {
               color: vinyl.genreColors.colorTheme === "dark" ? "#fff" : "#000",
             }}
           >
-            {vinyl.genre.title}
+            {vinyl.genre ? vinyl.genre.title : "Unknown genre"}
           </span>
           <span>{vinyl.styles.map((item) => renderStyle(item))}</span>
         </div>
@@ -384,7 +416,7 @@ const Application = () => {
                           : "#000",
                     }}
                   >
-                    {genre.name}
+                    {genre.title}
                   </li>
                 );
               })}
