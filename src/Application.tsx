@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import clsx from "clsx";
+import { useState } from 'react';
 import "./main.scss";
 import "./responsive.scss";
 
@@ -35,6 +36,7 @@ type GenreColor = {
 };
 
 const Application: React.FC = () => {
+
   const genreList: Genre[] = [
     {
       id: 1,
@@ -128,8 +130,8 @@ const Application: React.FC = () => {
     },
   };
 
-  const collectionList: number[] = [2, 6];
-  const favoritesList: number[] = [1, 4, 5];
+  const [collectionList, setCollectionList] = useState([2, 6]);
+  const [favoritesList, setFavoritesList] = useState([]);
 
   const vinylList: Vinyl[] = [
     {
@@ -214,9 +216,20 @@ const Application: React.FC = () => {
     },
   ];
 
+  const [counters, setCounters] = useState({
+    wishClicks: 0,
+    collectionClicks: 0
+  });
+
+  console.log(counters);
+  console.log(favoritesList);
+
   const searchTitle = "";
 
   const handleAddToCollection = (e: React.MouseEvent, vinyl: Vinyl) => {
+    setCounters({
+      ...counters,
+      collectionClicks: counters.collectionClicks + 1});
     alert("Add to collection: " + vinyl.title);
   };
 
@@ -235,7 +248,12 @@ const Application: React.FC = () => {
   };
 
   const handleFavorite = (e: React.MouseEvent, vinyl: Vinyl) => {
-    console.log(vinyl.title);
+    if(!vinyl.inFavorites) {
+      setFavoritesList([...favoritesList, vinyl.id]);
+    } else {
+      setFavoritesList(favoritesList.filter(id => id !== vinyl.id))
+    }
+    console.log(vinyl.id);
   };
 
   const renderStyle = (styleName: string) => {
